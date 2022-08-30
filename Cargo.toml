@@ -32,6 +32,7 @@ serde_json = "1.0"
 [features]
 example_generated = []
 rustc-dep-of-std = ["core", "compiler_builtins"]
+nosym = []
 
 [package.metadata.docs.rs]
 features = ["example_generated"]

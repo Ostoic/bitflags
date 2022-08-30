@@ -466,24 +466,28 @@ macro_rules! __impl_public_bitflags {
             )*
         }
     ) => {
+        #[cfg(not(feature = "nosym"))]
         impl $crate::__private::core::fmt::Binary for $PublicBitFlags {
             fn fmt(&self, f: &mut $crate::__private::core::fmt::Formatter) -> $crate::__private::core::fmt::Result {
                 $crate::__private::core::fmt::Binary::fmt(&self.0, f)
             }
         }
 
+        #[cfg(not(feature = "nosym"))]
         impl $crate::__private::core::fmt::Octal for $PublicBitFlags {
             fn fmt(&self, f: &mut $crate::__private::core::fmt::Formatter) -> $crate::__private::core::fmt::Result {
                 $crate::__private::core::fmt::Octal::fmt(&self.0, f)
             }
         }
 
+        #[cfg(not(feature = "nosym"))]
         impl $crate::__private::core::fmt::LowerHex for $PublicBitFlags {
             fn fmt(&self, f: &mut $crate::__private::core::fmt::Formatter) -> $crate::__private::core::fmt::Result {
                 $crate::__private::core::fmt::LowerHex::fmt(&self.0, f)
             }
         }
 
+        #[cfg(not(feature = "nosym"))]
         impl $crate::__private::core::fmt::UpperHex for $PublicBitFlags {
             fn fmt(&self, f: &mut $crate::__private::core::fmt::Formatter) -> $crate::__private::core::fmt::Result {
                 $crate::__private::core::fmt::UpperHex::fmt(&self.0, f)
@@ -897,6 +901,7 @@ macro_rules! __impl_internal_bitflags {
             }
         }
 
+        #[cfg(not(feature = "nosym"))]
         impl $crate::__private::core::fmt::Debug for $InternalBitFlags {
             fn fmt(&self, f: &mut $crate::__private::core::fmt::Formatter) -> $crate::__private::core::fmt::Result {
                 // Iterate over the valid flags
@@ -929,24 +934,28 @@ macro_rules! __impl_internal_bitflags {
             }
         }
 
+        #[cfg(not(feature = "nosym"))]
         impl $crate::__private::core::fmt::Binary for $InternalBitFlags {
             fn fmt(&self, f: &mut $crate::__private::core::fmt::Formatter) -> $crate::__private::core::fmt::Result {
                 $crate::__private::core::fmt::Binary::fmt(&self.bits(), f)
             }
         }
 
+        #[cfg(not(feature = "nosym"))]
         impl $crate::__private::core::fmt::Octal for $InternalBitFlags {
             fn fmt(&self, f: &mut $crate::__private::core::fmt::Formatter) -> $crate::__private::core::fmt::Result {
                 $crate::__private::core::fmt::Octal::fmt(&self.bits(), f)
             }
         }
 
+        #[cfg(not(feature = "nosym"))]
         impl $crate::__private::core::fmt::LowerHex for $InternalBitFlags {
             fn fmt(&self, f: &mut $crate::__private::core::fmt::Formatter) -> $crate::__private::core::fmt::Result {
                 $crate::__private::core::fmt::LowerHex::fmt(&self.bits(), f)
             }
         }
 
+        #[cfg(not(feature = "nosym"))]
         impl $crate::__private::core::fmt::UpperHex for $InternalBitFlags {
             fn fmt(&self, f: &mut $crate::__private::core::fmt::Formatter) -> $crate::__private::core::fmt::Result {
                 $crate::__private::core::fmt::UpperHex::fmt(&self.bits(), f)
